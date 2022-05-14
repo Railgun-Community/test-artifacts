@@ -1,0 +1,34 @@
+const fs = require('fs');
+const decompress = require('brotli/decompress');
+const zkey1s2 = decompress(fs.readFileSync(`${__dirname}/1-2/zkey.br`));
+const wasm1s2 = decompress(fs.readFileSync(`${__dirname}/1-2/wasm.br`));
+const nativeDat1s2 = decompress(fs.readFileSync(`${__dirname}/1-2/native.br`));
+const vkey1s2 =require('./1-2/vkey');
+const zkey1s3 = decompress(fs.readFileSync(`${__dirname}/1-3/zkey.br`));
+const wasm1s3 = decompress(fs.readFileSync(`${__dirname}/1-3/wasm.br`));
+const nativeDat1s3 = decompress(fs.readFileSync(`${__dirname}/1-3/native.br`));
+const vkey1s3 =require('./1-3/vkey');
+const zkey2s2 = decompress(fs.readFileSync(`${__dirname}/2-2/zkey.br`));
+const wasm2s2 = decompress(fs.readFileSync(`${__dirname}/2-2/wasm.br`));
+const nativeDat2s2 = decompress(fs.readFileSync(`${__dirname}/2-2/native.br`));
+const vkey2s2 =require('./2-2/vkey');
+const zkey2s3 = decompress(fs.readFileSync(`${__dirname}/2-3/zkey.br`));
+const wasm2s3 = decompress(fs.readFileSync(`${__dirname}/2-3/wasm.br`));
+const nativeDat2s3 = decompress(fs.readFileSync(`${__dirname}/2-3/native.br`));
+const vkey2s3 =require('./2-3/vkey');
+const zkey8s2 = decompress(fs.readFileSync(`${__dirname}/8-2/zkey.br`));
+const wasm8s2 = decompress(fs.readFileSync(`${__dirname}/8-2/wasm.br`));
+const nativeDat8s2 = decompress(fs.readFileSync(`${__dirname}/8-2/native.br`));
+const vkey8s2 =require('./8-2/vkey');
+
+const exportObject = [];
+if(!exportObject[1]) exportObject[1] = [];
+exportObject[1][2] = {zkey: zkey1s2, wasm: wasm1s2, vkey: vkey1s2, dat: nativeDat1s2};
+exportObject[1][3] = {zkey: zkey1s3, wasm: wasm1s3, vkey: vkey1s3, dat: nativeDat1s3};
+if(!exportObject[2]) exportObject[2] = [];
+exportObject[2][2] = {zkey: zkey2s2, wasm: wasm2s2, vkey: vkey2s2, dat: nativeDat2s2};
+exportObject[2][3] = {zkey: zkey2s3, wasm: wasm2s3, vkey: vkey2s3, dat: nativeDat2s3};
+if(!exportObject[8]) exportObject[8] = [];
+exportObject[8][2] = {zkey: zkey8s2, wasm: wasm8s2, vkey: vkey8s2, dat: nativeDat8s2};
+
+module.exports = exportObject;
