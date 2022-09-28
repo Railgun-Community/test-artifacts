@@ -1,5 +1,5 @@
 {
-  "name": "@railgun-privacy/test-artifacts",
+  "name": "@railgun-community/test-artifacts",
   "version": "1.0.0",
   "description": "Groth16 proving artifacts for test node.js environments",
   "repository": "git://github.com/Railgun-Community/test-artifacts",
